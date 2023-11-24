@@ -6,12 +6,16 @@ body {
     }
 header{
     background-color: blanchedalmond;
-
+    text-align: center;
 }
 
     h1 {
       color: #333; /* Text color for the heading */
       font-family: "Times New Roman", Times, serif; /* Font family for the heading */
+    }
+
+    .navbar li {
+        margin-right: 20px; /* 添加右邊間距 */
     }
 
     ul.navbar {
@@ -21,14 +25,39 @@ header{
         display: flex;
         background-color: aliceblue;
     }
-
-    ul.navbar li {
-        margin-right: 10px;
-    }
-
-    select.dropdown {
-        margin-top: 1em;
+    .dropdown-item {
+        position: relative;
+        display: inline-block;
       }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-item:hover .dropdown-content {
+        display: flex;
+        flex-direction: row; /* Display items horizontally */
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+      }
+      
+      /* Style the dropdown items */
+      .dropdown-item .dropdown-content .dropdown-item {
+        padding: 8px 12px;
+        border-bottom: 1px solid #ddd;
+        white-space: nowrap; /* Prevent line breaks */
+      }
+      
+      .dropdown-item .dropdown-content .dropdown-item:last-child {
+        border-bottom: none; /* Remove border for the last item */
+      }
+
+   
       
       @media all {
         /* Styles for all devices */
